@@ -1,0 +1,18 @@
+
+Demo steps
+```
+# Compile
+javac -d mods --module-source-path src $(find src -name "*.java")
+
+# Create module jar
+jar --create --file=mlib/bar@1.0.jar --module-version=1.0 -C mods/bar .
+
+# Create app jar
+jar --create --file=mlib/foo.jar --main-class=eu.agilejava.foo.Foo -C mods/foo .
+
+# Run
+java -p mlib -m foo
+
+# Old way don't work
+java -jar mlib/foo.jar
+```
