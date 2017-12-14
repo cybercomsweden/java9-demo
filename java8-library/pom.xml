@@ -1,0 +1,58 @@
+<project>
+
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.cybercom.java8</groupId>
+    <artifactId>java8-library</artifactId>
+    <version>1.0</version>
+    <name>Simple Stupid Java 8 Library</name>
+    
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
+         <mods.output.dir>/Users/ivar/Development/demo/java9-demo/mods</mods.output.dir>
+   </properties>
+    
+    <build>
+        <plugins>
+                        <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId>
+                <version>3.0.2</version>
+                <configuration>
+                    <outputDirectory>${mods.output.dir}</outputDirectory>
+                    <archive>
+                        <manifestEntries>
+                            <Automatic-Module-Name>${project.groupId}</Automatic-Module-Name>
+                        </manifestEntries>
+                    </archive>
+                </configuration>
+            </plugin>
+<!--            <plugin>
+                <groupId>org.moditect</groupId>
+                <artifactId>moditect-maven-plugin</artifactId>
+                <version>1.0.0.Alpha2</version>
+                <executions>
+                    <execution>
+                        <id>add-module-infos</id>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>add-module-info</goal>
+                        </goals>
+                        <configuration>
+                            <module>
+                                <moduleInfo>
+                                    <name>com.cybercom.java8</name>
+                                    <exports>
+                                        com.cybercom.foo;
+                                    </exports>
+                                </moduleInfo>
+                            </module>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>-->
+        </plugins>
+    </build>
+        
+</project>
